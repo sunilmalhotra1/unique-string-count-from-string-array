@@ -41,19 +41,17 @@ class Program
             }
             return sortedString;
 	    }
-        static int checkMatchedCombinationOfStrings(String[] input)
-        {
-            HashSet<String> set = new HashSet<String>();
-            int counter = 0;
-            for (int i = 0; i < input.Length; i++)
-            {
-              var charArraySet = sortString(input[i]);
-              if (!set.Contains(charArraySet))
-              {
-                set.Add(charArraySet);
-                counter++;
-              }
-            }
-            return counter;
-        }
+          static int checkMatchedCombinationOfStrings(String[] input)
+		{
+			HashSet<String> set = new HashSet<String>();
+			for (int i = 0; i < input.Length; i++)
+			{
+				var charArraySet = sortString(input[i]);
+				if (!set.Contains(charArraySet))
+				{
+					set.Add(charArraySet);
+				}
+			}
+			return set.Count;
+		}
     }
